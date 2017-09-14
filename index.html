@@ -12,13 +12,19 @@
   <!-- custom styles -->
   <link rel="stylesheet" href="style.css" />
 </head>
-<body ng-controller="TodoController">
-<ul>
-    <li ng-repeat="todo in todos">
-        <input type="checkbox" ng-model="todo.completed">
-        <span class="todo">{{ todo.name }}</span>
-    </li>
-</ul>
+<body>
+
+<ng-view></ng-view>
+
+<!-- Template -->
+<script type="text/ng-template" id="/todos.html">
+    <ul>
+        <li ng-repeat="todo in todos">
+            <input type="checkbox" ng-model="todo.completed">
+            <span class="todo">{{ todo.name }}</span>
+        </li>
+    </ul>
+</script>
 
 </body>
 </html>

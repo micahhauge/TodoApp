@@ -1,4 +1,4 @@
-angular.module('app', [])
+angular.module('app', ['ngRoute'])
     .controller('TodoController', ['$scope', function ($scope) {
         $scope.todos = [
             { name: 'Master HTML/CSS/Javascript', completed: true },
@@ -9,3 +9,10 @@ angular.module('app', [])
             { name: 'Be awesome!', completed: false },
         ]
     }])
+    .config(['$routeProvider', function($routeProvider) {
+        $routeProvider
+            .when('/', {
+                templateUrl: '/todos.html',
+                controller: 'TodoController',
+            });
+    }]);
